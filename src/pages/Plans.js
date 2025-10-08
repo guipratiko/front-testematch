@@ -37,54 +37,60 @@ const Plans = () => {
   const hardcodedPlans = [
     {
       id: 'basic',
-      name: 'Plano Básico',
+      name: 'Pacote 1k',
       type: 'basic',
       price: 29.9,
       credits: 1000,
-      description: 'Relatório com MBTI + 1 celeb lookalike + 2 dicas de conversa.',
+      description: 'Perfeito para iniciar sua jornada de autoconhecimento.',
       features: [
-        'Análise MBTI completa',
-        '1 celebridade lookalike',
-        '2 dicas de conversa personalizadas'
+        'Mil créditos inclusos',
+        'Validade vitalícia',
+        'Use no seu ritmo',
+        'Suporte dedicado'
       ],
       discount: { percentage: 0 },
       isActive: true,
-      sortOrder: 1
+      sortOrder: 1,
+      checkoutUrl: 'https://testematch.carrinho.app/one-checkout/ocmtb/29828835'
     },
     {
       id: 'complete',
-      name: 'Plano Completo',
+      name: 'Pacote 3k',
       type: 'complete',
       price: 59.9,
       credits: 3000,
-      description: 'Relatório full com múltiplas celebs variadas + scores preditivos + 3 scripts personalizados + infográfico PDF.',
+      description: 'Economia e recursos extras para análises completas.',
       features: [
-        'Análise MBTI completa',
-        'Múltiplas celebridades variadas',
-        'Scores preditivos de compatibilidade',
-        '3 scripts de conversa personalizados',
-        'Infográfico PDF compartilhável'
+        '3 mil créditos inclusos',
+        'Melhor custo-benefício',
+        'Recursos completos',
+        'Prioridade no suporte',
+        'Bônus exclusivos'
       ],
       discount: { percentage: 0 },
       isActive: true,
-      sortOrder: 2
+      sortOrder: 2,
+      checkoutUrl: 'https://testematch.carrinho.app/one-checkout/ocmtb/29830318'
     },
     {
       id: 'credits_pack',
-      name: 'Pacote de Créditos',
+      name: 'Pacote 5k',
       type: 'credits_pack',
       price: 99,
+      originalPrice: 124,
       credits: 5000,
-      description: '5000 créditos por R$99 (desconto 20% – ideal para análises recorrentes ou de casal).',
+      description: 'Máxima economia para você e seu par.',
       features: [
-        '5000 créditos para análises',
-        'Desconto de 20%',
+        '5 mil créditos inclusos',
+        'Economia de 20%',
         'Ideal para casais',
-        'Análises recorrentes'
+        'Análises ilimitadas',
+        'Suporte VIP'
       ],
       discount: { percentage: 20 },
       isActive: true,
-      sortOrder: 3
+      sortOrder: 3,
+      checkoutUrl: 'https://testematch.carrinho.app/one-checkout/ocmtb/29830386'
     }
   ];
 
@@ -265,13 +271,26 @@ const Plans = () => {
 
                   {/* Botão */}
                   <div className="text-center">
-                    <Link
-                      to="/upload"
-                      className={`w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center space-x-2 bg-gradient-to-r ${gradient} hover:shadow-lg hover:scale-105`}
-                    >
-                      <span>Escolher Plano</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    {plan.checkoutUrl ? (
+                      <a
+                        href={plan.checkoutUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center space-x-2 bg-gradient-to-r ${gradient} hover:shadow-lg hover:scale-105`}
+                      >
+                        <CreditCard className="h-4 w-4" />
+                        <span>Comprar Agora</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <Link
+                        to="/upload"
+                        className={`w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center space-x-2 bg-gradient-to-r ${gradient} hover:shadow-lg hover:scale-105`}
+                      >
+                        <span>Escolher Plano</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    )}
                   </div>
                 </motion.div>
               );

@@ -1,0 +1,15 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Páginas privadas não indexadas
+Disallow: /dashboard
+Disallow: /upload
+Disallow: /analysis/
+Disallow: /history
+Disallow: /profile
+Disallow: /setup-password/
+
+# Sitemap
+Sitemap: https://testematch.com/sitemap.xml
+

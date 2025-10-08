@@ -22,6 +22,7 @@ import HelpCenter from './pages/HelpCenter';
 import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import SetupPassword from './pages/SetupPassword';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="terms" element={<Terms />} />
           <Route path="privacy" element={<Privacy />} />
+          <Route path="setup-password/:userId" element={<SetupPassword />} />
           
           {/* Análise pública (compartilhamento) */}
           <Route path="analysis/share/:token" element={<Analysis />} />
