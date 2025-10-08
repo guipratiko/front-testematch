@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-beige-50 text-gray-800 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Botões */
+  .btn-primary {
+    @apply bg-gradient-romance text-white font-semibold py-3 px-6 rounded-xl shadow-romance hover:shadow-lg transform hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-royal-500 to-royal-600 text-white font-semibold py-3 px-6 rounded-xl shadow-royal hover:shadow-lg transform hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-400 to-gold-500 text-white font-semibold py-3 px-6 rounded-xl shadow-gold hover:shadow-lg transform hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-romance-500 text-romance-500 font-semibold py-3 px-6 rounded-xl hover:bg-romance-500 hover:text-white transition-all duration-300 ease-out;
+  }
+  
+  .btn-ghost {
+    @apply text-romance-500 font-semibold py-3 px-6 rounded-xl hover:bg-romance-50 transition-all duration-300 ease-out;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft p-6 border border-gray-100;
+  }
+  
+  .card-romance {
+    @apply bg-gradient-to-br from-romance-50 to-romance-100 rounded-2xl shadow-romance p-6 border border-romance-200;
+  }
+  
+  .card-royal {
+    @apply bg-gradient-to-br from-royal-50 to-royal-100 rounded-2xl shadow-royal p-6 border border-royal-200;
+  }
+  
+  .card-gold {
+    @apply bg-gradient-to-br from-gold-50 to-gold-100 rounded-2xl shadow-gold p-6 border border-gold-200;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-romance-500 focus:border-transparent transition-all duration-300 ease-out;
+  }
+  
+  .input-error {
+    @apply border-red-300 focus:ring-red-500;
+  }
+
+  /* Gradientes de texto */
+  .text-gradient-romance {
+    @apply bg-gradient-romance bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-gradient-gold bg-clip-text text-transparent;
+  }
+
+  /* Animações personalizadas */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s infinite;
+  }
+  
+  .animate-pulse-romance {
+    animation: pulseRomance 2s infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Efeitos especiais */
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .romance-glow {
+    @apply shadow-lg shadow-romance-500/25;
+  }
+  
+  .royal-glow {
+    @apply shadow-lg shadow-royal-500/25;
+  }
+  
+  .gold-glow {
+    @apply shadow-lg shadow-gold-500/25;
+  }
+
+  /* Layout responsivo */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
