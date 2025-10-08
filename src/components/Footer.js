@@ -15,24 +15,6 @@ const Footer = () => {
             <p className="text-gray-400 text-sm leading-relaxed">
               Transforme sua alimentação de forma inteligente através do WhatsApp. Análise nutricional instantânea e sugestões personalizadas.
             </p>
-            <div className="flex flex-col space-y-2 mt-4">
-              <a 
-                href="https://wa.me/556293557070" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                <span>📱</span>
-                <span>WhatsApp</span>
-              </a>
-              <a 
-                href="mailto:contato@testematch.com" 
-                className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                <span>📧</span>
-                <span>Email</span>
-              </a>
-            </div>
           </div>
 
           {/* Navegação */}
