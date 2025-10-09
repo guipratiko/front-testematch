@@ -69,42 +69,47 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section com Header Integrado */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-romance-50 via-white to-royal-50 min-h-screen">
+      <section className="relative overflow-hidden min-h-screen">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/img/banner.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+
         {/* Header Transparente */}
         <div className="absolute top-0 left-0 right-0 z-50">
           <Header transparent={true} />
         </div>
 
         {/* Conteúdo Hero */}
-        <div className="container-custom section-padding pt-32 sm:pt-36">
-          <div className="text-center max-w-4xl mx-auto">
+        <div className="relative z-10 section-padding pt-32 sm:pt-36 pl-8 sm:pl-12 lg:pl-16">
+          <div className="text-left max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-romance-200 mb-6">
-                <Sparkles className="h-4 w-4 text-gold-500" />
-                <span className="text-sm font-medium text-gray-700">Powered by IA</span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-2 inline-block">
                 Descubra sua{' '}
                 <span className="text-gradient-romance">compatibilidade</span>{' '}
                 romântica
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 inline-block">
                 Envie sua foto e descubra insights incríveis sobre sua personalidade, 
                 forma de amar e compatibilidade com diferentes tipos de pessoas.
               </p>
             </motion.div>
-
+              
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-8"
             >
               <Link
                 to="/upload"
@@ -122,15 +127,17 @@ const Home = () => {
                 Ver planos
               </Link>
             </motion.div>
-
+              
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12 text-center"
+              className="text-left"
             >
-              <p className="text-sm text-gray-500 mb-4">Mais de 10.000 análises realizadas</p>
-              <div className="flex justify-center space-x-1">
+              <p className="text-sm text-gray-500 mb-4 bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 inline-block">
+                Mais de 10.000 análises realizadas
+              </p>
+              <div className="flex justify-start space-x-1 bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 inline-flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-gold-400 fill-current" />
                 ))}

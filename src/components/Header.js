@@ -42,7 +42,7 @@ const Header = ({ transparent = false }) => {
   ];
 
   const headerClasses = transparent 
-    ? "bg-white/10 backdrop-blur-md border-b border-white/20" 
+    ? "bg-transparent border-b border-transparent" 
     : "bg-white border-b border-gray-200";
 
   const textColorClasses = transparent 
