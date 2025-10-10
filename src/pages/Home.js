@@ -70,11 +70,21 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section com Header Integrado */}
       <section className="relative overflow-hidden min-h-screen">
-        {/* Background Image */}
+        {/* Background Image - Desktop */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden sm:block"
           style={{
             backgroundImage: 'url(/img/banner.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+
+        {/* Background Image - Mobile */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat block sm:hidden"
+          style={{
+            backgroundImage: 'url(/img/bannersmarth.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
