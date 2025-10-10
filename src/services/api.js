@@ -91,6 +91,7 @@ export const userService = {
   getSettings: () => api.get('/user/settings'),
   updateSettings: (settings) => api.put('/user/settings', settings),
   getUserAnalyses: (params) => api.get('/user/analyses', { params }),
+  getLLMResponses: () => api.get('/user/llm-responses'),
   deactivateAccount: (password) => api.delete('/user/account', { data: { password } }),
 };
 

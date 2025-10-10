@@ -31,7 +31,7 @@ const Plans = () => {
     }
   );
 
-  const plans = plansData?.plans || [];
+  const plans = plansData?.data?.plans || [];
 
   // Planos hardcoded para garantir que apareçam
   const hardcodedPlans = [

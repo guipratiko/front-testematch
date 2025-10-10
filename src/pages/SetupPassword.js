@@ -39,12 +39,6 @@ const SetupPassword = () => {
   const loadUserData = async () => {
     try {
       const response = await api.get(`/auth/setup-password/${userId}`);
-      
-      console.log('📥 Dados recebidos da API:', response.data);
-      console.log('👤 User data:', response.data.user);
-      console.log('💳 Credits:', response.data.user.credits);
-      console.log('📦 Plan:', response.data.user.plan);
-      
       setUserData(response.data.user);
       
       // Se já tem email válido, preencher e bloquear campo

@@ -10,7 +10,6 @@ import {
   History, 
   CreditCard, 
   Heart,
-  TrendingUp,
   Clock,
   CheckCircle,
   Star,
@@ -30,8 +29,8 @@ const Dashboard = () => {
     }
   );
 
-  const stats = dashboardData?.stats;
-  const recentAnalyses = dashboardData?.recentAnalyses || [];
+  const stats = dashboardData?.data?.stats;
+  const recentAnalyses = dashboardData?.data?.recentAnalyses || [];
 
   const getStatusIcon = (status) => {
     switch (status) {
@@ -95,7 +94,7 @@ const Dashboard = () => {
           </motion.div>
 
           {/* Cards de estatísticas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,41 +119,12 @@ const Dashboard = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600">Análises</p>
-                  <p className="text-3xl font-bold text-gray-900">{stats?.totalAnalyses || 0}</p>
+                  <p className="text-3xl font-bold text-gray-900">{stats?.totalLLMResponses || 0}</p>
                 </div>
                 <Heart className="h-8 w-8 text-royal-500" />
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="card-gold"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">Concluídas</p>
-                  <p className="text-3xl font-bold text-gray-900">{stats?.completedAnalyses || 0}</p>
-                </div>
-                <CheckCircle className="h-8 w-8 text-gold-500" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="card"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">Taxa de Sucesso</p>
-                  <p className="text-3xl font-bold text-gray-900">{stats?.successRate || 0}%</p>
-                </div>
-                <TrendingUp className="h-8 w-8 text-gray-600" />
-              </div>
-            </motion.div>
           </div>
 
           {/* Ações rápidas */}

@@ -33,7 +33,7 @@ const Analysis = () => {
     }
   );
 
-  const analysis = analysisData?.analysis;
+  const analysis = analysisData?.data?.analysis;
 
   useEffect(() => {
     if (analysis?.shareToken) {
