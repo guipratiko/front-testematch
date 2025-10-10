@@ -10,7 +10,6 @@ import {
   Zap, 
   Shield,
   ArrowRight,
-  Sparkles,
   Camera
 } from 'lucide-react';
 

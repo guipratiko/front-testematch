@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Upload, 
-  Zap, 
   BarChart3, 
   Share2,
   CheckCircle,

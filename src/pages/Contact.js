@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { 
   Mail, 
   MessageCircle, 
-  Phone,
   MapPin,
   Send,
   CheckCircle,

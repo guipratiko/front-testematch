@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useAuth } from '../contexts/AuthContext';
 import { api } from '../services/api';
 import { 
   Lock, 
@@ -17,7 +16,6 @@ import toast from 'react-hot-toast';
 const SetupPassword = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
-  const { login } = useAuth();
   
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -32,11 +30,7 @@ const SetupPassword = () => {
   });
   const [errors, setErrors] = useState({});
 
-  useEffect(() => {
-    loadUserData();
-  }, [userId]);
-
-  const loadUserData = async () => {
+  const loadUserData = useCallback(async () => {
     try {
       const response = await api.get(`/auth/setup-password/${userId}`);
       setUserData(response.data.user);
@@ -58,7 +52,11 @@ const SetupPassword = () => {
         navigate('/');
       }
     }
-  };
+  }, [userId, navigate]);
+
+  useEffect(() => {
+    loadUserData();
+  }, [loadUserData]);
 
   const validateForm = () => {
     const newErrors = {};

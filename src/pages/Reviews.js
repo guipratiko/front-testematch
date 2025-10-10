@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Star, Heart, Sparkles, ArrowRight, Quote } from 'lucide-react';
+import { Star, Sparkles, ArrowRight, Quote } from 'lucide-react';
 
 const Reviews = () => {
   const stats = [

@@ -15,7 +15,7 @@ const HistoryPage = () => {
   const [copiedIndex, setCopiedIndex] = useState(null);
 
   // Buscar respostas LLM
-  const { data: llmData, isLoading, error } = useQuery(
+  const { data: llmData, isLoading } = useQuery(
     'llm-responses',
     userService.getLLMResponses,
     {
