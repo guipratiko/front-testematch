@@ -126,7 +126,7 @@ const Header = () => {
 
         {/* Menu Mobile */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4">
+          <div className="md:hidden border-t border-gray-100 py-4 bg-white/80 backdrop-blur-md">
             <div className="space-y-2">
               {isAuthenticated() ? (
                 <>

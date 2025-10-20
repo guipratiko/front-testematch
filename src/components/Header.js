@@ -138,7 +138,7 @@ const Header = ({ transparent = false }) => {
 
         {/* Menu Mobile */}
         {isMobileMenuOpen && (
-          <div className={`md:hidden border-t py-4 ${transparent ? 'border-white/20' : 'border-gray-200'}`}>
+          <div className={`md:hidden border-t py-4 bg-white/80 backdrop-blur-md ${transparent ? 'border-white/20' : 'border-gray-200'}`}>
             <div className="space-y-2">
               {isAuthenticated() ? (
                 <>
